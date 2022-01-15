@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
+import {COLORS} from '../../constants';
 
 const book = (props) => {
 
@@ -6,7 +7,7 @@ const book = (props) => {
     <View style={styles.bookContainer}>
       <Image style={styles.thumbnail}
         source={{
-          uri: props.book.volumeInfo.imageLinks.thumbnail,
+          uri: props.book.volumeInfo?.imageLinks?.thumbnail,
         }} />
       <View style={styles.bookBody} >
         <Text numberOfLines={1} style={styles.title}>{props.book.volumeInfo.title}</Text>
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "#e1e1e1",
+    borderColor: COLORS.secondColor,
     marginVertical: 5,
     padding: 10,
     borderRadius: 10,
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     height: 100,
     borderWidth: 1,
     marginVertical: 10,
-    borderColor: "#e1e1e1",
+    borderColor: COLORS.secondColor,
     borderRadius: 50,
     marginEnd: 10
   },
@@ -46,8 +47,10 @@ const styles = StyleSheet.create({
   }
   ,
   date: {
-    color: "red",
-    marginVertical: 2
+    color: COLORS.primaryColor,
+    marginVertical: 2,
+    fontSize: 14,
+    fontWeight: "600"
   }
 
 });

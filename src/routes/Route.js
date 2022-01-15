@@ -1,42 +1,41 @@
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Books from "../views/Books/list"
-import AddBook from "../views/Books/AddBook"
+import BooksScreen from "../screens/Books/BooksScreen"
+import AddBookScreen from "../screens/Books/AddBookScreen"
 const Stack = createNativeStackNavigator();
-import { Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { Image, TouchableOpacity, StyleSheet, } from 'react-native';
 
 const RouteNavigator = () => {
   const MyTheme = {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      background: '#fff'
+      background: '#ffffff'
     },
   };
   return (
     <NavigationContainer theme={MyTheme}>
       <Stack.Navigator >
-
-        <Stack.Screen name="Books" component={Books}
-
+        <Stack.Screen name="BooksScreen" component={BooksScreen}
           options={({ navigation }) => ({
-
-            animation: 'slide_from_right',
             headerTitleAlign: "center",
             title: "Home",
             headerRight: () => (
-              <TouchableOpacity onPress={() => navigation.navigate('AddBook')}>
+              <TouchableOpacity onPress={() => navigation.navigate('AddBookScreen')} style={{ padding: 10, paddingLeft: 15 }}>
                 <Image
+                  height={50}
+                  width={50}
                   style={styles.headerIcon}
-                  source={require('../../assets/add.svg')}
+                  source={require('../../assets/add.png')}
 
                 />
               </TouchableOpacity>
             ),
+
           })}
         />
-        <Stack.Screen name="AddBook" component={AddBook}
+        <Stack.Screen name="AddBookScreen" component={AddBookScreen}
           options={() => ({
             title: 'Home',
           })}
@@ -49,11 +48,11 @@ const RouteNavigator = () => {
 const styles = StyleSheet.create({
   headerIcon: {
     paddingHorizontal: 10,
-    width: 28,
-    height: 28
+    width: 40,
+    height: 40,
   },
   contentStyle: {
-    backgroundColor: "#000"
+    backgroundColor: "#000000"
   }
 })
 
