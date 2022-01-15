@@ -31,7 +31,7 @@ const BooksScreen = () => {
 
   return (
     <SafeAreaView style={[styles.container, isLoading ? styles.app : null]}>
-      <View>
+      <View style={styles.wrapper}>
         <StatusBar style="auto" />
         {
           isLoading ?
@@ -58,8 +58,11 @@ const BooksScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 15,
     marginTop: StatusBar.currentHeight || 0,
+  },
+  wrapper: {
+    padding: 15,
   },
   app: {
     flex: 1,

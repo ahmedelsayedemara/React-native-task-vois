@@ -57,13 +57,3 @@ const styles = StyleSheet.create({
 })
 
 export default RouteNavigator
-
-// //   options={{
-//   headerRight: () => (
-//     <Button
-//       onPress={() => props.navigation.navigate('Books')}
-//       title="Add new book"
-//     />
-//   ),
-// }}
-// options={{ headerShown: false }}
